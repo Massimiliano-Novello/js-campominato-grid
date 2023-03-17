@@ -4,25 +4,39 @@
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
 //Dichiarazioni
-const playBtn = document.querySelector(".play-btn");
+let playBtn = document.querySelector(".play-btn");
+playBtn.addEventListener("click", function(){
 
+    //Per ogni numero genero una casella
+    const grid = document.querySelector(".grid");
 
-//Per ogni numero genero una casella
-const grid = document.querySelector(".grid");
-for (let i = 1; i <= 100; i++) {
-    const currentNumber = i;
-    console.log(currentNumber);
-}
+    // reset contenuto precedente
+    grid.innerHTML = "";
+
+    for (let i = 1; i <= 100; i++) {
+        const currentNumber = i;
+        let newItem = generateGrid(currentNumber)
+        newItem.addEventListener("click", clickChoice);
+        grid.append(newItem)
+    }
+})
+
 
 
 
 //FUNCTION
 
 //Function DOM
-function generateGrid (contentBox) {
-    const newBox = document.querySelector("div");
+function generateGrid (text) {
+    const newBox = document.createElement("div");
     newBox.classList.add("box");
-    newBox.innerHTML = contentBox;
+    newBox.innerHTML = text;
     return newBox;
 }
+
+function clickChoice () {
+    this.classList.toggle("blue")
+}
+
+
 
