@@ -1,0 +1,51 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background-color: aquamarine;
+    width: 100%;
+    height: 100vh;
+}
+/* HEADER */
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.play-btn {
+    padding: 10px 50px;
+    font-size: .8rem;
+}
+
+/* MAIN */
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    width: calc(1000px / 10);
+    height: calc(1000px / 10);
+    border: 2px solid white;
+}
